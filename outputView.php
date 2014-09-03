@@ -30,6 +30,7 @@
                     <td>Sales Revenues</td>
                 </tr>
         <?php
+                /* Displays search results */
                 for($i = 0; $i < count($query_result); $i++){
                     echo "<tr>\n";
                     for($j = 0; $j < count($query_result[$i]) / 2; $j++){

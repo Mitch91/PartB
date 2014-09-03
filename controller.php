@@ -3,6 +3,7 @@
     
     $error_msg = "";
     
+    // displays each value for the dropdown within option tags
     function echo_options_for_field($field){
         $values = get_values_of_field($field);
         for($i = 0; $i < count($values); $i++){
@@ -10,6 +11,7 @@
         }
     }
     
+    // Validates that the query
     function validate_query($query_array){
         global $error_msg;
         
@@ -33,6 +35,10 @@
         return $error_msg == "";
     }
     
+    /* If count($_GET) == 11 then the request was sent.
+     * The only other thing that count($_GET) would equal is 1
+     * which is when there is an error message returned. 
+     */
     if(count($_GET) == 11){
         if(validate_query($_GET))
             get_results($_GET);
